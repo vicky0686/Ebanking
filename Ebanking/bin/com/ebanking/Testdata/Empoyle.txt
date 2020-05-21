@@ -1,0 +1,5 @@
+EmpoyleeName###password###RoleType###branch###result
+DLFmindq###Cashier###kamal###123456789
+DLFmindQ###Cashier###kamal###123456789
+DLFminDq###Cashier###kamal###123456789
+dLFmindq###Cashier###kamal###123456789

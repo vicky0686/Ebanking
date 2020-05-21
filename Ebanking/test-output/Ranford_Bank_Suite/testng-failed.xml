@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Ranford_Bank_Suite]">
+  <test thread-count="5" name="Verify_Modules_Test(failed)">
+    <classes>
+      <class name="com.ebanking.Master.Libary_TestNg">
+        <methods>
+          <include name="print"/>
+          <include name="Admin_Logout"/>
+          <include name="Admin"/>
+          <include name="Lanuch"/>
+          <include name="close"/>
+        </methods>
+      </class> <!-- com.ebanking.Master.Libary_TestNg -->
+      <class name="com.ebanking.Master.RoleNg">
+        <methods>
+          <include name="role"/>
+          <include name="print"/>
+          <include name="Admin_Logout"/>
+          <include name="Admin"/>
+          <include name="Lanuch"/>
+          <include name="close"/>
+        </methods>
+      </class> <!-- com.ebanking.Master.RoleNg -->
+      <class name="com.ebanking.Master.EmpoyleNg">
+        <methods>
+          <include name="empoyle"/>
+          <include name="print"/>
+          <include name="Admin_Logout"/>
+          <include name="Admin"/>
+          <include name="Lanuch"/>
+          <include name="close"/>
+        </methods>
+      </class> <!-- com.ebanking.Master.EmpoyleNg -->
+      <class name="com.ebanking.Master.BranchNg">
+        <methods>
+          <include name="branch"/>
+          <include name="print"/>
+          <include name="Admin_Logout"/>
+          <include name="Admin"/>
+          <include name="Lanuch"/>
+          <include name="close"/>
+        </methods>
+      </class> <!-- com.ebanking.Master.BranchNg -->
+    </classes>
+  </test> <!-- Verify_Modules_Test(failed) -->
+</suite> <!-- Failed suite [Ranford_Bank_Suite] -->

@@ -1,0 +1,41 @@
+package com.ebanking.KeyboardFrameWork;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import com.ebanking.Master.Libary_with_element;
+
+public class KeyBoard {
+
+	public static void main(String[] args) throws IOException {
+	 Libary_with_element lb=new Libary_with_element();
+	 FileInputStream fi=new FileInputStream("D:\\BankingAutomationProject\\Ebanking\\src\\com\\ebanking\\KeyboardFrameWork\\keyword_data.xlsx");
+	 XSSFWorkbook wb=new XSSFWorkbook(fi);
+	 XSSFSheet wc=wb.getSheet("TestCase");
+	 XSSFSheet wc1=wb.getSheet("TestSteps");
+	 
+	 int count=wc.getLastRowNum();
+	 int count1=wc1.getLastRowNum();
+	 
+	 for(int i=0;i<=count;i++)
+	 {
+		 String exe=wc.getRow(i).getCell(2).getStringCellValue();
+		 if(exe.equalsIgnoreCase("Y"))
+		 {
+			 String TCID=wc.getRow(i).getCell(0).getStringCellValue();
+			 for(int j=0;j<=count1;j++)
+			 {
+				 
+			 }
+		 }
+	 }
+	 
+	 
+	 
+	}
+
+}

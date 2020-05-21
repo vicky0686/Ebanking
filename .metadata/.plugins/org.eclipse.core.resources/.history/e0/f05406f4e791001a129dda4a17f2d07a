@@ -1,0 +1,28 @@
+package com.ebanking.PageObjectModel;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.ebanking.Master.Libary_with_element;
+
+public class ExeEmpoyleNG {
+	WebDriver driver;
+	@Test
+	public void New_Empoyle_Deatils() throws IOException
+	{
+		Libary_with_element le=new Libary_with_element();
+		le.Lanuch();
+		le.Admin();
+		AdminHp Admin=PageFactory.initElements(driver, AdminHp.class);
+		Admin.Emp();
+		Empoylecode emp= PageFactory.initElements(driver, Empoylecode.class);
+		emp.Empoyle_Creation();
+		driver.switchTo().alert().accept();
+		emp.Home();
+		
+	}
+
+}

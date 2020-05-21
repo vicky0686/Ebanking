@@ -1,0 +1,5 @@
+BranchName###Adress1###Adress2###Adress3###Area###Zipcode###Country###State###City
+Abcd123###Hyderabad###DLFGate###Maggipoint###TCS###532001###INDIA###GOA###GOA
+Abcd1234###Hyderabad###DLFGate###Maggipoint###TCS###532001###INDIA###GOA###GOA
+Abcd12345###Hyderabad###DLFGate###Maggipoint###TCS###532001###INDIA###GOA###GOA
+Abcd123456###Hyderabad###DLFGate###Maggipoint###TCS###532001###INDIA###GOA###GOA

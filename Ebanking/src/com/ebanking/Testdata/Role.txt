@@ -1,0 +1,5 @@
+RoleName###RoleDescriciption###RoleType
+AbcdeManger###Cashier###C
+AbcdefManger###Cashier###E
+AbcdefgManger###Cashier###C
+AbcdefghManger###Cashier###E

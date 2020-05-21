@@ -1,0 +1,246 @@
+package com.ebanking.Master;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Libary_with_element {
+public static WebDriver driver;
+	
+public static String exval,Actul;
+	
+	public String Lanuch(String url) throws IOException
+	{
+		
+		driver=new FirefoxDriver();
+		driver.get(url);
+		
+		driver.manage().window().maximize();
+		
+		exval="Ranford Bank";
+		Actul=driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[1]/td[4]/p/span")).getText();
+		if(exval.equalsIgnoreCase(Actul))
+		{
+			System.out.println("Ranford Home Page is Verify");
+			return "pass";
+		}
+		else
+		{
+			System.out.println("Ranford home is not verified");
+			return "Fail";
+			
+		}
+	
+		
+	}
+	
+	
+	
+	
+		public String Admin(String un,String pw)
+		{
+			
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			
+			driver.findElement(By.name("txtuId")).sendKeys(un);
+			driver.findElement(By.name("txtPword")).sendKeys(pw);
+			driver.findElement(By.name("login")).click();
+			
+			
+			
+			//Verify The Admin Home PAge
+			
+			exval ="Welcome to Admin";
+			Actul=driver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[1]/td[4]/strong/font/font")).getText();
+			if(exval.equalsIgnoreCase(Actul))
+			{
+				System.out.println("Welecome Admin Home Page is Verify");
+				return "pass";
+			}
+			
+			else
+			{
+				System.out.println("Welecome Admin Home is not verified");
+				return "Fail";
+			}
+			
+			
+		
+		}
+
+
+		
+		
+		public String Branch(String Tn,String Tad1,String Tad2,String Tad3,String Areadata,String zipdata,String cntydata,String stdata,String cty)
+	       {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			
+			driver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/a/img\r\n" + "")).click();
+			driver.findElement(By.name("BtnNewBR")).click();
+			//Filling the Text Field With Valid Data
+			driver.findElement(By.name("txtbName")).sendKeys(Tn);
+			
+			driver.findElement(By.name("txtAdd1")).sendKeys(Tad1);
+			driver.findElement(By.name("Txtadd2")).sendKeys(Tad2);
+			driver.findElement(By.name("txtadd3")).sendKeys(Tad3);
+			
+			driver.findElement(By.name("txtArea")).sendKeys(Areadata);
+			
+			driver.findElement(By.xpath("//*[@id=\"txtZip\"]")).sendKeys(zipdata);
+			
+			Select Country=new Select(driver.findElement(By.id("lst_counrtyU")));
+			Country.selectByVisibleText(cntydata);
+			
+			Select State=new Select(driver.findElement(By.id("lst_stateI")));
+			State.selectByVisibleText(stdata);
+			
+			Select City=new Select(driver.findElement(By.id("lst_cityI")));
+			City.selectByVisibleText(cty);
+			
+			
+			driver.findElement(By.id("btn_insert")).click();
+			
+			Actul=driver.switchTo().alert().getText();
+			exval="already Exist";
+			if(Actul.contains(exval))
+			{
+				System.out.println("The Banker Name is Already Exit");
+				//return "pass";
+			}
+			else
+				{
+					System.out.println("The Banker Name is Already Not Exit");
+				}
+					
+			//Alreart message should Accept
+			driver.switchTo().alert().accept();
+			
+			driver.findElement(By.xpath("/html/body/div/form/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr/td[1]/a/img\r\n" + "")).click();
+			return Actul;
+		
+			
+			
+		}
+
+		
+		
+		
+		
+		
+		
+	
+		public String Role(String Role,String RoleDec,String Type)
+		{
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		driver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td/a/img")).click();
+		driver.findElement(By.name("btnRoles")).click();
+		
+		//Filled The Role Field
+		driver.findElement(By.name("txtRname")).sendKeys(Role);
+		driver.findElement(By.name("txtRDesc")).sendKeys(RoleDec);
+		
+		Select RoleType=new Select(driver.findElement(By.name("lstRtypeN")));
+		RoleType.selectByVisibleText(Type);
+	
+		
+		driver.findElement(By.name("btninsert")).click();
+
+		//Alreart message should Accept
+		exval="Role Already existed";
+		Actul =driver.switchTo().alert().getText();
+		
+		if(Actul.contains(exval))
+		{
+			System.out.println("Alredy Role Page Is Exited");
+			return "pass";
+		}
+		else
+		{
+			{
+				System.out.println("Already Role is Not Existed");
+			}
+		}
+		driver.switchTo().alert().accept();
+				
+		driver.findElement(By.xpath("/html/body/div/form/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr/td[1]/a/img")).click();
+		return Actul;
+		
+	}
+
+		
+		
+		public String Empoylee(String emp,String pw, String role,String branch )
+		{
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		driver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[2]/td/table/tbody/tr[8]/td/a/img")).click();
+		driver.findElement(By.name("BtnNew")).click();
+		
+		//Filled The data in the EmpoyleeField
+		
+		driver.findElement(By.name("txtUname")).sendKeys(emp);
+		driver.findElement(By.name("txtLpwd")).sendKeys(pw);
+		
+		Select Role=new Select(driver.findElement(By.id("lst_Roles")));
+		Role.selectByVisibleText(role);
+		
+		Select Branch=new Select(driver.findElement(By.id("lst_Branch")));
+		Branch.selectByVisibleText(branch);
+		
+		driver.findElement(By.name("BtnSubmit")).click();
+		Actul =driver.switchTo().alert().getText();
+		driver.switchTo().alert().accept();
+		exval="Employer Already Existed...Try again";
+		if(Actul.contains(exval))
+		{
+			System.out.println("Alredy Empoyle Page Is Exited");
+		}
+		else
+		{
+			{
+				System.out.println("Already Empoylee is Not Existed");
+			}
+		}
+		
+			
+		driver.findElement(By.xpath("/html/body/div/form/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr/td[1]/a/img")).click();
+		return Actul;
+	
+		
+	}
+
+		
+		
+		
+		
+		
+		
+		public void Admin_Logout()
+        {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td[4]/table/tbody/tr/td[3]/a/img")).click();
+
+		
+	}
+		
+	
+		
+		
+		
+	
+	public String close()
+	{
+		driver.close();
+		return null;
+
+	}
+	
+
+
+}

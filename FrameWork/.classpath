@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/Project Required files/selenium-server-standalone-3.141.59 (1).jar"/>
+	<classpathentry kind="lib" path="D:/mindqselenium/jar file/sikulixapi.jar"/>
+	<classpathentry kind="lib" path="D:/mindqselenium/jar file/sikulixsetup-1.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/mindqselenium/jar file/jxl-2.6.jar/jxl-2.6.jar"/>
+	<classpathentry kind="lib" path="D:/mindqselenium/jar file/log4j.jar/log4j.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

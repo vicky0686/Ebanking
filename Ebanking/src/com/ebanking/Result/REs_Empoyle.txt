@@ -1,0 +1,5 @@
+EmpoyleeName###password###RoleType###branch###result
+DLFmindq###Cashier###kamal###123456789$$$$Employer Already Existed...Try again
+DLFmindQ###Cashier###kamal###123456789$$$$Employer Already Existed...Try again
+DLFminDq###Cashier###kamal###123456789$$$$Employer Already Existed...Try again
+dLFmindq###Cashier###kamal###123456789$$$$Employer Already Existed...Try again
